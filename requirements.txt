@@ -1,0 +1,5 @@
+vk_api
+networkx
+pandas
+streamlit
+streamlit-agraph
