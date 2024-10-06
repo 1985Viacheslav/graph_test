@@ -171,18 +171,18 @@ def convert_graph_to_streamlit_format(G, vk_ids, group_vkid_to_name):
             centrality_data.append({
                 'VK ID': vk_id,
                 'ФИО': full_name,
-                'Степень центральности': degree_centrality.get(vk_id, 0),
-                'Центральность посредничества': betweenness_centrality.get(vk_id, 0),
-                'Центральность близости': closeness_centrality.get(vk_id, 0),
-                'Собственный вектор центральности': eigenvector_centrality.get(vk_id, 0),
+                'Центральность степенная': degree_centrality.get(vk_id, 0),
+                'Центральность по посредничеству': betweenness_centrality.get(vk_id, 0),
+                'Центральность по близости': closeness_centrality.get(vk_id, 0),
+                'Центральность собственного вектора': eigenvector_centrality.get(vk_id, 0),
             })
 
     centrality_df = pd.DataFrame(centrality_data)
     
-    centrality_df[['Степень центральности', 'Центральность посредничества',
-                   'Центральность близости', 'Собственный вектор центральности']] = centrality_df[[
-        'Степень центральности', 'Центральность посредничества',
-        'Центральность близости', 'Собственный вектор центральности']].round(4)
+    centrality_df[['Центральность степенная', 'Центральность по посредничеству',
+                   'Центральность по близости', 'Центральность собственного вектора']] = centrality_df[[
+        'Центральность степенная', 'Центральность по посредничеству',
+        'Центральность по близости', 'Центральность собственного вектора']].round(4)
 
     return nodes, edges, centrality_df
 
