@@ -141,10 +141,10 @@ def convert_graph_to_streamlit_format(G, vk_ids, group_vkid_to_name):
             profile_url = f"https://vk.com/id{node}"
             # информация по центральности
             centrality_info = (
-                f"Степень центральности: {degree_centrality[node]:.4f}\n"
-                f"Центральность посредничества: {betweenness_centrality[node]:.4f}\n"
-                f"Центральность близости: {closeness_centrality[node]:.4f}\n"
-                f"Собственный вектор центральности: {eigenvector_centrality[node]:.4f}\n"
+                f"Центральность степенная: {degree_centrality[node]:.4f}\n"
+                f"Центральность по посредничеству: {betweenness_centrality[node]:.4f}\n"
+                f"Центральность по близости: {closeness_centrality[node]:.4f}\n"
+                f"Центральность собственного вектора: {eigenvector_centrality[node]:.4f}\n"
                 f"Профиль: {profile_url}"
             )
         else:
